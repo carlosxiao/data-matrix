@@ -1,0 +1,58 @@
+<!-- BEGIN PAGE CONTENT-->
+<div class="content content-narrow">
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Bootstrap Lock -->
+            <div class="block block-themed">
+                <div class="block-header bg-primary">
+                    <ul class="block-options">
+                        <li>
+                            <button type="button" data-toggle="block-option" ng-click="openFileModel()" ><i class="fa fa-save"></i>Import</button>
+                        </li>
+                    </ul>
+                    <h3 class="block-title" style="text-transform: inherit;">{{currentKey}}</h3>
+                </div>
+                <div class="block-content">
+                    <form class="form-horizontal" onsubmit="return false;">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <textarea id="jsonTextarea" ng-model="jsonString"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- END Bootstrap Lock -->
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="import_file_model" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-slideleft">
+        <div class="modal-content">
+            <div class="block block-themed block-transparent remove-margin-b">
+                <div class="block-header bg-primary-dark">
+                    <ul class="block-options">
+                        <li>
+                            <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
+                        </li>
+                    </ul>
+                    <h3 class="block-title">Import File</h3>
+                </div>
+                <div class="block-content">
+                    <form class="form-horizontal push-5-t" onsubmit="return false;">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input ng-model="bat.file" name="batFile" id="batFile" type="file" name="...">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-sm btn-default" type="button" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-sm btn-primary" type="button" ng-click="uploadFile()"><i class="fa fa-check"></i>Upload</button>
+            </div>
+        </div>
+    </div>
+</div>
